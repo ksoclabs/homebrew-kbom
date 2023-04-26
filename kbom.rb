@@ -5,21 +5,21 @@
 class Kbom < Formula
   desc "The Kubernetes Bill of Materials (KBOM) standard provides insight into container orchestration tools widely used across the industry."
   homepage "https://github.com/ksoclabs/kbom"
-  version "0.0.6"
+  version "0.0.7"
   license "Apache 2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ksoclabs/kbom/releases/download/v0.0.6/kbom_0.0.6_darwin_amd64.tar.gz"
-      sha256 "8eecb6e1421821acfff25c5efa91617bf2e1e727c55ad3a557407019bc12c931"
+      url "https://github.com/ksoclabs/kbom/releases/download/v0.0.7/kbom_0.0.7_darwin_amd64.tar.gz"
+      sha256 "bdcdffab204b8dee3fecf34520135fdeb44b06bac953304f3812d23b729938bc"
 
       def install
         bin.install "kbom"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ksoclabs/kbom/releases/download/v0.0.6/kbom_0.0.6_darwin_arm64.tar.gz"
-      sha256 "323c9d934e30ad0d289ff7951df2a12e10e8e3faf323e982cfb552d0c867a211"
+      url "https://github.com/ksoclabs/kbom/releases/download/v0.0.7/kbom_0.0.7_darwin_arm64.tar.gz"
+      sha256 "3146126f07a39c5b10f42eae099681031d8e38f6fabef8ba5a2c3ecb02e041a6"
 
       def install
         bin.install "kbom"
@@ -28,17 +28,17 @@ class Kbom < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/ksoclabs/kbom/releases/download/v0.0.6/kbom_0.0.6_linux_amd64.tar.gz"
-      sha256 "d05cf4e68a71d6407ad6c9fc292ee9cede70d1b271fde9e1bc07ef78647824a4"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ksoclabs/kbom/releases/download/v0.0.7/kbom_0.0.7_linux_arm64.tar.gz"
+      sha256 "e22cdf2ff0e1c6fe466e7e1f9fe6b1d7d7efe141c5a3a32aae97ce539627e048"
 
       def install
         bin.install "kbom"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ksoclabs/kbom/releases/download/v0.0.6/kbom_0.0.6_linux_arm64.tar.gz"
-      sha256 "3bd3a56262c9564f1720a91131fa519d08adc6733c1fc36a7a84a9eda52e246a"
+    if Hardware::CPU.intel?
+      url "https://github.com/ksoclabs/kbom/releases/download/v0.0.7/kbom_0.0.7_linux_amd64.tar.gz"
+      sha256 "eea5c48f318e1ca4d2f45c869115914dcf580cb6b97b50ab08c91787c5f89e11"
 
       def install
         bin.install "kbom"
