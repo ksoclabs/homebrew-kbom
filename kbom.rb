@@ -5,21 +5,21 @@
 class Kbom < Formula
   desc "The Kubernetes Bill of Materials (KBOM) standard provides insight into container orchestration tools widely used across the industry."
   homepage "https://github.com/ksoclabs/kbom"
-  version "0.2.0"
+  version "0.2.1"
   license "Apache 2"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/ksoclabs/kbom/releases/download/v0.2.0/kbom_0.2.0_darwin_amd64.tar.gz"
-      sha256 "cd2991b675a3ea634afa3c80deeb67623a533cc1c101c67f7983211597d75c8f"
+    if Hardware::CPU.arm?
+      url "https://github.com/ksoclabs/kbom/releases/download/v0.2.1/kbom_0.2.1_darwin_arm64.tar.gz"
+      sha256 "d8a9b55df5afdf139f579c3eb6cbd3ecd14dacccd69b3ff04b1b489e62cea63c"
 
       def install
         bin.install "kbom"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/ksoclabs/kbom/releases/download/v0.2.0/kbom_0.2.0_darwin_arm64.tar.gz"
-      sha256 "2d0765005136d56064bfbbe5ea27c5cbae1d1650354603c6e00f3a1f97b29759"
+    if Hardware::CPU.intel?
+      url "https://github.com/ksoclabs/kbom/releases/download/v0.2.1/kbom_0.2.1_darwin_amd64.tar.gz"
+      sha256 "c5574930233f0906ffd0c4aeeeca7a5801d212357471de13761d5c55b00cb900"
 
       def install
         bin.install "kbom"
@@ -29,16 +29,16 @@ class Kbom < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/ksoclabs/kbom/releases/download/v0.2.0/kbom_0.2.0_linux_amd64.tar.gz"
-      sha256 "2d45e885951b69459cc3b60b54145f01340da522b14ee4bdbb9f2ec80dd0cb94"
+      url "https://github.com/ksoclabs/kbom/releases/download/v0.2.1/kbom_0.2.1_linux_amd64.tar.gz"
+      sha256 "0e785faf9fa727cf0c225cbbf02b0a89d324275204fa54a9c725b285b8a6d3a4"
 
       def install
         bin.install "kbom"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ksoclabs/kbom/releases/download/v0.2.0/kbom_0.2.0_linux_arm64.tar.gz"
-      sha256 "27e1b79350a47207b109c41a17a7b4568d701a9a77dcdc5b8306f96a895f9aab"
+      url "https://github.com/ksoclabs/kbom/releases/download/v0.2.1/kbom_0.2.1_linux_arm64.tar.gz"
+      sha256 "f789b84d440742dc55d41bf7618ab27ed665097af2895ed3412f706e6c990906"
 
       def install
         bin.install "kbom"
